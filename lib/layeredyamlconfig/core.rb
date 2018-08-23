@@ -69,7 +69,7 @@ class LayeredYAMLConfig
                 raise ArgumentError, "file #{fn} does not exist"
             end
             begin
-                data = YAML.load(File.open(fn))
+                data = YAML.load(File.open(fn), fn)
                 if ! data.instance_of?(Hash)
                     raise ArgumentError, "file #{fn} does not contain a Hash"
                 end
